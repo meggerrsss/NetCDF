@@ -13,7 +13,7 @@ c = Dataset( 'C:\Users\Meghan\Desktop\MSC1\Research\Output files\{0}'.format(nom
 print c.variables
 
 # print variable header information for 'v'
-v = 'raddry' ##########
+v = 'abs550aer' ##########
 print c.variables[v]
 
 # store 'v' value in x
@@ -23,9 +23,13 @@ unite = c.variables[v].__dict__['units']           # units
 nomlonge = c.variables[v].__dict__['long_name']    # long name
 temps = c.variables['time'][:]                     # time
 altitude = c.variables['level'][:]                 # altitude
+taille = x.shape                                     # vector size
 
 # plot x
 plt.plot(x)
+plt.title(nomlonge)
+
+
 
 
 # from http://matplotlib.org/users/pyplot_tutorial.html
