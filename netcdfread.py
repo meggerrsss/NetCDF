@@ -13,22 +13,16 @@ c = Dataset( 'C:\Users\Meghan\Desktop\MSC1\Research\Output files\{0}'.format(nom
 print c.variables
 
 # print variable header information for 'v'
-
 v = 'raddry' ##########
 print c.variables[v]
 
 # store 'v' value in x
 x = c.variables[v][:]
 
-# units of v
-unite = c.variables[v].__dict__['units']
-# long_name of v
-nomlonge = c.variables[v].__dict__['long_name']
-
-
-temps = c.variables['time'][:]
-altitude = c.variables['level'][:]
-
+unite = c.variables[v].__dict__['units']           # units
+nomlonge = c.variables[v].__dict__['long_name']    # long name
+temps = c.variables['time'][:]                     # time
+altitude = c.variables['level'][:]                 # altitude
 
 # plot x
 plt.plot(x)
